@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root "tasks#new"
+  root "tasks#new"
 
   resources :tasks
 end

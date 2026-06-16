@@ -1,0 +1,46 @@
+<h2><%= @task.name %></h2>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @task.due_date %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @task.priority %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @task.category %>
+</p>
+
+<hr>
+
+<h3>Subtasks</h3>
+
+<%= link_to "Add Subtask",
+new_task_subtask_path(@task) %>
+
+<ul>
+
+<% @task.subtasks.each do |subtask| %>
+
+<li>
+
+<%= subtask.name %>
+
+<%= button_to "Delete",
+task_subtask_path(@task, subtask),
+method: :delete %>
+
+</li>
+
+<% end %>
+
+</ul>
