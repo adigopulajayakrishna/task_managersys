@@ -1,0 +1,67 @@
+<h1>All Tasks</h1>
+
+<table class="task-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Task Name</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.name %></td>
+        <td><%= task.description %></td>
+        <td><%= task.due_date %></td>
+        <td><%= task.priority %></td>
+        
+      </tr>
+    
+    <% end %>
+  </tbody>
+</table>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  .task-table th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .task-table td {
+    padding: 10px;
+  }
+
+  .task-table th,
+  .task-table td {
+    border: 1px solid #ddd;
+  }
+
+  .task-table tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  .task-table tr:hover {
+    background-color: #f5f5f5;
+  }
+</style>
