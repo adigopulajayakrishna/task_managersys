@@ -33,7 +33,9 @@ new_task_path %>
     task_path(task),
     method: :delete %>
   </td>
-
+  <td>
+  <%= link_to "Add Subtask", new_task_subtask_path(task) %>
+</td>
 </tr>
 
 <% end %>

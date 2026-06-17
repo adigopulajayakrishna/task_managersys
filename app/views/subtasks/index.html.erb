@@ -1,0 +1,25 @@
+<h1>Task Management System</h1>
+
+<table border="1">
+
+<tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Due Date</th>
+  <th>Priority</th>
+  <th>Category</th>
+  <th>Action</th>
+</tr>
+
+<% @subtasks.each do |subtask| %>
+
+<tr>
+  <td><%= subtask.id %></td>
+  <td><%= subtask.name %></td>
+  <td><%= subtask.description %></td>
+  <td><%= subtask.due_date %></td>
+  <td><%= subtask.priority %></td>
+  <td><%= subtask.category %></td>
+
+  <td>

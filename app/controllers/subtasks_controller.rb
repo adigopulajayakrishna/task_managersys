@@ -1,32 +1,26 @@
 class SubtasksController < ApplicationController
-  before_action :set_task
-
   def new
+    @task = Task.find(params[:task_id])
     @subtask = @task.subtasks.new
   end
 
   def create
+     @task = Task.find(params[:task_id])
     @subtask = @task.subtasks.new(subtask_params)
 
     if @subtask.save
-      redirect_to task_path(@task)
+      redirect_to task_subtasks_path(@task)
     else
       render :new
     end
   end
-
-  def destroy
-    @subtask = @task.subtasks.find(params[:id])
-    @subtask.destroy
-
-    redirect_to task_path(@task)
+  def index
+    @task = Task.find(params[:task_id])
+    @subtask = @task.subtasks
   end
+
 
   private
-
-  def set_task
-    @task = Task.find(params[:task_id])
-  end
 
   def subtask_params
     params.require(:subtask).permit(
